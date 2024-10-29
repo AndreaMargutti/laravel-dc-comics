@@ -9,8 +9,6 @@ class PageController extends Controller
 {
     //
     public function home() {
-        $cards = Card::all();
-
-        return view('pages.home', compact('cards'));
+        return view('pages.home');
     }
 }
