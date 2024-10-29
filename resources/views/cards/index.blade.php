@@ -17,7 +17,11 @@
         <tbody>
             @foreach ($cards as $card)
             <tr>
-                <th scope="row"> {{$card->name}} </th>
+                <th scope="row">
+                <a href="{{route('cards.show', $card->id)}}">
+                    {{$card->name}}
+                </a>
+                </th>
                 <td> {{$card->expansion}} </td>
                 <td> {{$card->card_type}} </td>
             </tr>
