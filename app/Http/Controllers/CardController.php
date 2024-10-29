@@ -25,4 +25,22 @@ class CardController extends Controller
         return view('cards.create');
     }
 
+    public function store(Request $request) {
+        //dd($request);
+
+        //recupero i risultati del form
+        $formData = $request->all();
+
+        //creo una variabile per una nuova carta
+        $card = new Card();
+
+        // # Popolo la nuova carta
+        $card->name = $formData["name"];
+        $card->expansion = $formData["expansion"];
+        $card->card_type = $formData["card_type"];
+        $card->description = $formData["description"];
+        $card->save();
+
+        return redirect()->route("cards.index");
+    }
 }
