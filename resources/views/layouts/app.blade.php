@@ -11,14 +11,14 @@
 <body>
 
     {{-- Inserici Header --}}
-    @include("partials.header")
+    {{-- @include("partials.header") --}}
 
     <main>
         @yield("main-content")
     </main>
 
     {{-- Inserisci Footer --}}
-    @include("partials.footer")
+    {{-- @include("partials.footer") --}}
 
     @vite("resources/js/app.js")
     @yield("additional-scripts")
