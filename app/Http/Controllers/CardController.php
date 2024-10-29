@@ -20,4 +20,9 @@ class CardController extends Controller
         //dd($card);
         return view('cards.show', compact('card'));
     }
+
+    public function create() {
+        return view('cards.create');
+    }
+
 }

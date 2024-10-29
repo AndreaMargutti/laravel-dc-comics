@@ -5,6 +5,7 @@
 @section("main-content")
 <div class="container-fluid text-center">
     <h1 class="mb-3">List of ALL the Cards</h1>
+    <a href="{{ route('cards.create')}}" class="btn btn-primary btn-lg mb-3">Insert New Card</a>
     <table class="table">
         <thead>
           <tr>
