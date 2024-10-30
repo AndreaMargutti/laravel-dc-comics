@@ -63,4 +63,12 @@ class CardController extends Controller
 
         return redirect()->route("cards.show", $card->id);
     }
+
+    public function destroy (string $id) {
+
+        $card = Card::findOrfail($id);
+        $card->delete();
+
+        return redirect()->route('cards.index');
+    }
 }

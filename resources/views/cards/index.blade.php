@@ -31,11 +31,19 @@
                             Edit
                         </a>
                     </button>
-                    <button class="btn btn-danger">Delete</button>
+                    <form action="{{route('cards.delete', $card->id)}}" method="POST" class="d-inline">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
                 </td>
             </tr>
             @endforeach
         </tbody>
       </table>
 </div>
+@endsection
+
+@section('additional-scripts')
+    @vite('resources/js/cards/delete-form.js')
 @endsection

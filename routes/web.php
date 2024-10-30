@@ -22,3 +22,4 @@ Route::get('/cards/create', [CardController::class, 'create'])->name('cards.crea
 Route::get('/cards/{id}', [CardController::class, 'show'])->name('cards.show');
 Route::get('/cards/{id}/edit', [CardController::class, 'edit'])->name('cards.edit');
 Route::put('/cards/{id}', [CardController::class, "update"])->name('cards.update');
+Route::delete("/cards/{id}", [CardController::class, "destroy"])->name("cards.delete");
