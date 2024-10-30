@@ -31,7 +31,8 @@
                             Edit
                         </a>
                     </button>
-                    <form action="{{route('cards.delete', $card->id)}}" method="POST" class="d-inline">
+                    <form action="{{route('cards.delete', $card->id)}}" method="POST" class="d-inline"
+                        custom-data-name="{{$card->name}}">
                         @method('DELETE')
                         @csrf
                         <button type="submit" class="btn btn-danger">Delete</button>
