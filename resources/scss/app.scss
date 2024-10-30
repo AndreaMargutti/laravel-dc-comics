@@ -1,1 +1,8 @@
 @use "~bootstrap/scss/bootstrap" as *;
+
+button {
+    a {
+        text-decoration: none;
+        color: black;
+}
+}

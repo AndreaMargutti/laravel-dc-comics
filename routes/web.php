@@ -20,3 +20,5 @@ Route::get('/cards', [CardController::class, 'index'])->name('cards.index');
 Route::post('/cards', [CardController::class, 'store'])->name('cards.store');
 Route::get('/cards/create', [CardController::class, 'create'])->name('cards.create');
 Route::get('/cards/{id}', [CardController::class, 'show'])->name('cards.show');
+Route::get('/cards/{id}/edit', [CardController::class, 'edit'])->name('cards.edit');
+Route::put('/cards/{id}', [CardController::class, "update"])->name('cards.update');

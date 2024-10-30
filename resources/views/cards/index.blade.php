@@ -12,6 +12,7 @@
             <th scope="col">Card Name</th>
             <th scope="col">Expansion</th>
             <th scope="col">Card Type</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -24,6 +25,14 @@
                 </th>
                 <td> {{$card->expansion}} </td>
                 <td> {{$card->card_type}} </td>
+                <td>
+                    <button class="btn btn-success">
+                        <a href="{{route('cards.edit', $card->id)}}">
+                            Edit
+                        </a>
+                    </button>
+                    <button class="btn btn-danger">Delete</button>
+                </td>
             </tr>
             @endforeach
         </tbody>

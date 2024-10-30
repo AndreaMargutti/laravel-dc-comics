@@ -41,6 +41,26 @@ class CardController extends Controller
         $card->description = $formData["description"];
         $card->save();
 
-        return redirect()->route("cards.index");
+        return redirect()->route("cards.show", $card->id);
+    }
+
+    public function edit(string $id) {
+        $card = Card::findOrFail($id);
+
+        return view('cards.edit', compact('card'));
+    }
+
+    public function update (Request $request, string $id) {
+        $card= Card::findOrFail($id);
+        // dd($request);
+        $editData = $request->all();
+
+        $card->name = $editData["name"];
+        $card->expansion = $editData["expansion"];
+        $card->card_type = $editData["card_type"];
+        $card->description = $editData["description"];
+        $card->update();
+
+        return redirect()->route("cards.show", $card->id);
     }
 }
