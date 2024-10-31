@@ -30,7 +30,7 @@ class CardController extends Controller
         //dd($request);
 
         //recupero i risultati del form
-        $formData = $request->validate();
+        $formData = $request->validated();
 
         //creo una variabile per una nuova carta
         $card = new Card();
@@ -52,7 +52,7 @@ class CardController extends Controller
     }
 
     public function update (StoreCardsRequest $request, string $id) {
-        $formData = $request->validate();
+        $formData = $request->validated();
         // dd($request);
 
         $card= Card::findOrFail($id);
