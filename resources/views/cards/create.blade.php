@@ -2,9 +2,17 @@
 
 @section('main-content')
 <div class="container text-center">
+    <div class="container text-center">
+        <ul>
+            @foreach ($errors->all() as $error )
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+
+    </div>
+
     <form action="{{route("cards.store")}}" method="POST">
         @csrf
-
         <label for="card-name" class="form-label">Card Name</label>
         <input type="text" id="card-name" name="name" class="form-control">
 

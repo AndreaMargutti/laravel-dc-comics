@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCardsRequest;
 use App\Models\Card;
 use Illuminate\Http\Request;
 
@@ -25,11 +26,11 @@ class CardController extends Controller
         return view('cards.create');
     }
 
-    public function store(Request $request) {
+    public function store(StoreCardsRequest $request) {
         //dd($request);
 
         //recupero i risultati del form
-        $formData = $request->all();
+        $formData = $request->validate();
 
         //creo una variabile per una nuova carta
         $card = new Card();
