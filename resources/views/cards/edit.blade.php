@@ -2,6 +2,13 @@
 
 @section('main-content')
 <div class="container text-center">
+    <div class="container text-center">
+        <ul>
+            @foreach ($errors->all() as $error )
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
     <form action="{{route('cards.update', $card->id)}}" method="POST">
         @csrf
         @method('PUT')

@@ -30,7 +30,7 @@ class CardController extends Controller
         //dd($request);
 
         //recupero i risultati del form
-        $formData = $request->validated();
+        $formData = $request->validate();
 
         //creo una variabile per una nuova carta
         $card = new Card();
@@ -51,15 +51,15 @@ class CardController extends Controller
         return view('cards.edit', compact('card'));
     }
 
-    public function update (Request $request, string $id) {
-        $card= Card::findOrFail($id);
+    public function update (StoreCardsRequest $request, string $id) {
+        $formData = $request->validate();
         // dd($request);
-        $editData = $request->all();
 
-        $card->name = $editData["name"];
-        $card->expansion = $editData["expansion"];
-        $card->card_type = $editData["card_type"];
-        $card->description = $editData["description"];
+        $card= Card::findOrFail($id);
+        $card->name = $formData["name"];
+        $card->expansion = $formData["expansion"];
+        $card->card_type = $formData["card_type"];
+        $card->description = $formData["description"];
         $card->update();
 
         return redirect()->route("cards.show", $card->id);

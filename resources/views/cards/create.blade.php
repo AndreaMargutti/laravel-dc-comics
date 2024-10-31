@@ -8,7 +8,6 @@
                 <li>{{$error}}</li>
             @endforeach
         </ul>
-
     </div>
 
     <form action="{{route("cards.store")}}" method="POST">
